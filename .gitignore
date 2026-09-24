@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.env*.local
+*.log
+source-home.html
+fetch-*
+extract*
+team.txt
