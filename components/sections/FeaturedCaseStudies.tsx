@@ -8,7 +8,7 @@ export function FeaturedCaseStudies() {
   const featured = caseStudies.slice(0, 3);
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding w-full max-w-full overflow-x-hidden bg-white">
       <div className="container-tcg min-w-0">
         <SectionHeader
           label="Case Studies"

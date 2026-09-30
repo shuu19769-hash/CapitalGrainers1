@@ -3,12 +3,20 @@
 import Image from "next/image";
 import { clientLogos } from "@/data/clients";
 
-export function LogoMarquee({ dark = true }: { dark?: boolean }) {
+export function LogoMarquee({
+  dark = false,
+  overlapHero = true,
+}: {
+  dark?: boolean;
+  overlapHero?: boolean;
+}) {
   const items = [...clientLogos, ...clientLogos];
 
   return (
     <section
-      className={dark ? "bg-teal py-12 md:py-16" : "border-y border-sand bg-sand-light py-12 md:py-16"}
+      className={`relative z-10 w-full max-w-full overflow-x-hidden ${overlapHero ? "-mt-24 sm:-mt-28 md:-mt-32" : ""} ${
+        dark ? "bg-teal-dark py-12 md:py-16" : "border-y border-sand/80 bg-white py-10 md:py-14"
+      }`}
       aria-label="Client logos"
     >
       <p
@@ -18,8 +26,8 @@ export function LogoMarquee({ dark = true }: { dark?: boolean }) {
       >
         Trusted by ambitious brands
       </p>
-      <div className="group relative w-full overflow-hidden">
-        <div className="flex w-max max-w-none animate-marquee gap-4 px-4 sm:gap-6 sm:px-6 md:gap-8 group-hover:[animation-play-state:paused] motion-reduce:animate-none motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-3">
+      <div className="marquee-shell group">
+        <div className="flex w-max max-w-none animate-marquee gap-4 safe-px sm:gap-6 md:gap-8 group-hover:[animation-play-state:paused] motion-reduce:animate-none motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-3">
           {items.map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}

@@ -14,7 +14,7 @@ export function PortfolioPreview() {
       : portfolioProjects.filter((p) => p.tags.includes(filter));
 
   return (
-    <section className="section-padding bg-sand-light">
+    <section className="section-padding w-full max-w-full overflow-x-hidden bg-sand-light">
       <div className="container-tcg">
         <SectionHeader label="Portfolio" title="Selected work across ecommerce and lifestyle" align="center" />
         <div className="mt-8 flex flex-wrap justify-center gap-2">

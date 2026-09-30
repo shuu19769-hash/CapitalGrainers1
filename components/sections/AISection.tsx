@@ -11,7 +11,7 @@ const points = [
 
 export function AISection() {
   return (
-    <section className="section-padding bg-teal text-sand">
+    <section className="section-padding w-full max-w-full overflow-x-hidden bg-teal text-sand">
       <div className="container-tcg grid min-w-0 items-center gap-10 sm:gap-12 lg:grid-cols-2">
         <div>
           <SectionHeader

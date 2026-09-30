@@ -3,7 +3,7 @@ import { growthProcess } from "@/data/process";
 
 export function ProcessSection() {
   return (
-    <section className="section-padding bg-sand-light">
+    <section className="section-padding w-full max-w-full overflow-x-hidden bg-sand-light">
       <div className="container-tcg">
         <SectionHeader
           label="Process"

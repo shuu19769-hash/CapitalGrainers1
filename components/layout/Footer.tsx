@@ -35,7 +35,7 @@ export function Footer() {
   const highlightStats = agencyStats.filter((s) => s.label !== "Founded").slice(0, 3);
 
   return (
-    <footer className="relative overflow-hidden bg-teal-dark text-sand">
+    <footer className="relative w-full max-w-full overflow-hidden bg-teal-dark text-sand">
       <div className="h-1 w-full bg-gradient-to-r from-transparent via-copper to-transparent" aria-hidden />
 
       <div className="pointer-events-none absolute -right-4 top-12 select-none font-bold text-[clamp(3.5rem,16vw,11rem)] leading-none tracking-tighter text-white/[0.03] sm:-right-8 sm:top-16">

@@ -1,12 +1,11 @@
 import { createMetadata } from "@/lib/metadata";
-import { TeamPhoto } from "@/components/ui/TeamPhoto";
 import { PageHero } from "@/components/ui/PageHero";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { teamMembers } from "@/data/team";
+import { TeamTabs } from "@/components/sections/TeamTabs";
 import { whyPillars } from "@/data/process";
 import { siteConfig } from "@/lib/site";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
@@ -73,17 +72,8 @@ export default function AboutPage() {
       <section className="section-padding bg-white">
         <div className="container-tcg">
           <SectionHeader label="Team" title="The people behind your growth" align="center" />
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {teamMembers.map((m) => (
-              <article key={m.name} className="border border-sand">
-                <TeamPhoto src={m.imageSrc} alt={m.name} />
-                <div className="p-6">
-                  <h3 className="font-bold text-teal">{m.name}</h3>
-                  <p className="text-sm italic text-copper">{m.roles.join(" · ")}</p>
-                  <p className="mt-3 text-sm text-teal/75">{m.bio}</p>
-                </div>
-              </article>
-            ))}
+          <div className="mt-10 sm:mt-12">
+            <TeamTabs />
           </div>
         </div>
       </section>

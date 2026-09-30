@@ -1,16 +1,13 @@
 import { createMetadata } from "@/lib/metadata";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { LogoMarquee } from "@/components/sections/LogoMarquee";
-import { StatsSection } from "@/components/sections/StatsSection";
-import { ServicesIntro } from "@/components/sections/ServicesIntro";
-import { FeaturedCaseStudies } from "@/components/sections/FeaturedCaseStudies";
-import { PortfolioPreview } from "@/components/sections/PortfolioPreview";
-import { WhySection } from "@/components/sections/WhySection";
-import { ProcessSection } from "@/components/sections/ProcessSection";
+import { AwardBadgesSection } from "@/components/sections/AwardBadgesSection";
+import { MarketingServicesIntro } from "@/components/sections/MarketingServicesIntro";
+import { MediaPillarsSection } from "@/components/sections/MediaPillarsSection";
+import { WhoWeServeSection } from "@/components/sections/WhoWeServeSection";
+import { DifferenceSection } from "@/components/sections/DifferenceSection";
+import { ReviewsCTASection } from "@/components/sections/ReviewsCTASection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { TeamPreview } from "@/components/sections/TeamPreview";
-import { AISection } from "@/components/sections/AISection";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { WhyPartnerSection } from "@/components/sections/WhyPartnerSection";
 
 export const metadata = createMetadata({
   title: "Premium Digital Growth Agency",
@@ -23,17 +20,14 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <LogoMarquee />
-      <StatsSection />
-      <ServicesIntro />
-      <FeaturedCaseStudies />
-      <PortfolioPreview />
-      <WhySection />
-      <ProcessSection />
+      <AwardBadgesSection />
+      <MarketingServicesIntro />
+      <MediaPillarsSection />
+      <WhoWeServeSection />
+      <DifferenceSection />
+      <ReviewsCTASection />
       <TestimonialsSection />
-      <TeamPreview />
-      <AISection />
-      <FinalCTA />
+      <WhyPartnerSection />
     </>
   );
 }

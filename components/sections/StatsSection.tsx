@@ -6,7 +6,7 @@ import { agencyStats } from "@/data/stats";
 
 export function StatsSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding w-full max-w-full overflow-x-hidden bg-white">
       <div className="container-tcg">
         <SectionHeader
           label="Results"

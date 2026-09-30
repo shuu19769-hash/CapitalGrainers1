@@ -7,45 +7,45 @@ export type TeamMember = {
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Mirza Aryan Bin Tariq",
-    roles: ["Paid Advertising Specialist", "Meta, TikTok, Snapchat & LinkedIn"],
+    name: "Mirza Aryan Tariq",
+    roles: ["Founder", "Business Growth Specialist", "Performance Marketer"],
     bio:
-      "Mirza Aryan is a 25-year-old paid advertising specialist with 3+ years of experience. He runs full-funnel paid social across Meta, TikTok, Snapchat, and LinkedIn — pairing creative strategy with conversion-driven media buying.",
+      "Mirza Aryan leads growth strategy and performance marketing—pairing funnel architecture with disciplined media buying to turn digital investment into measurable revenue.",
     imageSrc: "/images/team/aryan.jpg",
   },
   {
-    name: "Abdul Mohaiman Lodhi",
-    roles: ["Digital Growth Operator", "SEO & Google Ads", "AI Automation"],
+    name: "Shaukat Ayaz",
+    roles: ["CEO", "Marketing Specialist"],
     bio:
-      "Abdul Mohaiman is a 24-year-old digital growth operator with 5+ years of experience scaling ecommerce brands. He leads SEO, Google Ads, and AI automation systems — engineering compounding, profitable growth for global brands.",
+      "Shaukat Ayaz sets the vision for The Capital Gainers and oversees marketing strategy—aligning campaigns, positioning, and client outcomes with long-term business growth.",
+    imageSrc: "",
+  },
+  {
+    name: "Sheikh Zain Jaffar",
+    roles: ["Branding & Creative Expert", "AI Content Specialist"],
+    bio:
+      "Zain builds bold brand identities and creative systems, using AI-assisted content workflows to keep messaging consistent, on-brand, and built for performance.",
+    imageSrc: "/images/team/zain.jpg",
+  },
+  {
+    name: "Abdul Mohaiman Lodhi",
+    roles: ["SEO & Google Ads", "AI Automation", "System Building"],
+    bio:
+      "Abdul Mohaiman engineers SEO, Google Ads, and automation systems that compound traffic and conversions—designing reliable growth infrastructure for scaling brands.",
     imageSrc: "/images/team/mohaiman.jpg",
   },
   {
-    name: "Bilal Jathol",
-    roles: ["UGC Content Creator", "Visual Content Specialist"],
-    bio:
-      "Bilal crafts scroll-stopping UGC and visual content that helps brands earn attention, trust, and conversions across social platforms. His work bridges authentic storytelling with performance-driven creative strategy.",
-    imageSrc: "/images/team/bilal.jpg",
-  },
-  {
     name: "Mubshar Saleem",
-    roles: ["Graphics Designer", "Video Editor"],
+    roles: ["Graphic Designer", "Video Editor"],
     bio:
-      "Mubshar designs high-impact visual assets and edits conversion-focused videos that elevate brand perception and improve creative performance across every channel and format.",
+      "Mubshar designs high-impact graphics and edits conversion-focused video that strengthens brand perception and lifts creative performance across channels.",
     imageSrc: "/images/team/mubshar.jpg",
   },
   {
     name: "Shumaila Usman",
-    roles: ["Shopify Developer", "WordPress & Custom Coding"],
+    roles: ["Custom Coding", "WordPress & Shopify Developer"],
     bio:
-      "Shumaila is a full-stack website developer specializing in Shopify, WordPress, and custom-coded digital experiences — building fast, responsive, SEO-ready, and conversion-focused websites for growth-stage brands.",
+      "Shumaila builds fast, responsive, SEO-ready stores and sites on Shopify and WordPress, plus custom-coded experiences tuned for conversion and scale.",
     imageSrc: "/images/team/developer.jpg",
-  },
-  {
-    name: "Shiekh Zain Jaffar",
-    roles: ["Branding & Creatives Expert"],
-    bio:
-      "Shiekh Zain is a branding and creatives expert who builds bold, cohesive brand identities that resonate with audiences and drive real business impact. From strategy to execution, he ensures every creative touchpoint tells a compelling story.",
-    imageSrc: "/images/team/zain.jpg",
   },
 ];

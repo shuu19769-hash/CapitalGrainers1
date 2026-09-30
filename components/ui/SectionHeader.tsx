@@ -29,7 +29,7 @@ export function SectionHeader({
     >
       {label && <p className="section-label">{label}</p>}
       <h2
-        className={`text-balance text-[clamp(1.5rem,4.5vw,3rem)] font-bold leading-tight tracking-tight ${
+        className={`text-balance text-[clamp(1.75rem,5vw,3.375rem)] font-bold leading-tight tracking-tight ${
           light ? "text-white" : "text-teal"
         }`}
       >
@@ -37,7 +37,7 @@ export function SectionHeader({
       </h2>
       {subtitle && (
         <p
-          className={`mt-5 text-base leading-relaxed md:text-lg ${
+          className={`mt-5 text-lg leading-relaxed md:text-xl ${
             light ? "text-sand/80" : "text-teal/70"
           }`}
         >
