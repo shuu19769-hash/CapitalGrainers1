@@ -4,6 +4,8 @@ export type AwardBadge = {
   accent: string;
   logoSrc: string;
   logoAlt: string;
+  /** Client website — opens in a new tab when set */
+  websiteUrl?: string;
 };
 
 export const awardBadges: AwardBadge[] = [
@@ -13,6 +15,7 @@ export const awardBadges: AwardBadge[] = [
     accent: "#8a6d4f",
     logoSrc: "/images/brands/zazaar.png",
     logoAlt: "ZAZAAR",
+    websiteUrl: "https://zazaar.com.pk/",
   },
   {
     id: "2",
@@ -20,6 +23,7 @@ export const awardBadges: AwardBadge[] = [
     accent: "#a08060",
     logoSrc: "/images/brands/megacore.png",
     logoAlt: "MegaCore International",
+    websiteUrl: "https://megacoreintl.com/",
   },
   {
     id: "3",
@@ -27,6 +31,7 @@ export const awardBadges: AwardBadge[] = [
     accent: "#6b5340",
     logoSrc: "/images/brands/austin-style.png",
     logoAlt: "Austin Style",
+    websiteUrl: "https://www.austinstyle.store/",
   },
   {
     id: "4",
@@ -34,6 +39,7 @@ export const awardBadges: AwardBadge[] = [
     accent: "#8a6d4f",
     logoSrc: "/images/brands/rehan-malik.png",
     logoAlt: "Rehan Malik Store",
+    websiteUrl: "https://rehanmalikstore.com/",
   },
   {
     id: "5",
@@ -41,5 +47,6 @@ export const awardBadges: AwardBadge[] = [
     accent: "#a66d4f",
     logoSrc: "/images/brands/crystal-media.png",
     logoAlt: "Crystal Media",
+    websiteUrl: "https://crystal-media-lake.vercel.app/",
   },
 ];

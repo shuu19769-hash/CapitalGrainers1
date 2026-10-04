@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { services } from "@/data/services";
 
@@ -105,7 +106,11 @@ export function ContactForm() {
       <div className="flex items-start gap-3">
         <input id="consent" name="consent" type="checkbox" className="mt-1 h-4 w-4 accent-copper" />
         <label htmlFor="consent" className="text-sm text-teal/80">
-          I agree to be contacted about my inquiry and understand my information will be handled per the Privacy Policy.
+          I agree to be contacted about my inquiry and understand my information will be handled per the{" "}
+          <Link href="/privacy-policy" className="font-semibold text-copper underline hover:text-copper-soft">
+            Privacy Policy
+          </Link>
+          .
         </label>
       </div>
       {errors.consent && <p className="text-sm text-red-800">{errors.consent}</p>}

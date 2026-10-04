@@ -55,7 +55,7 @@ export default function AboutPage() {
         </div>
       </section>
       <StatsSection />
-      <section className="section-padding bg-sand-light">
+      <section id="values" className="section-padding bg-sand-light scroll-mt-24">
         <div className="container-tcg">
           <SectionHeader label="Values" title="How we work" align="center" />
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -69,7 +69,7 @@ export default function AboutPage() {
         </div>
       </section>
       <ProcessSection />
-      <section className="section-padding bg-white">
+      <section id="team" className="section-padding bg-white scroll-mt-24">
         <div className="container-tcg">
           <SectionHeader label="Team" title="The people behind your growth" align="center" />
           <div className="mt-10 sm:mt-12">

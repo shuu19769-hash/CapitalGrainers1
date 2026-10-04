@@ -16,8 +16,8 @@ export function ReviewsCTASection() {
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <Reveal className="relative mx-auto aspect-[4/3] w-full max-w-lg overflow-hidden rounded-lg border border-sand shadow-md" delay={0.05}>
               <Image
-                src="/images/portfolio/kidzaar.jpg"
-                alt="Case study results preview"
+                src="/images/pages/growth-analytics.jpg"
+                alt="Growth analytics and performance review"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

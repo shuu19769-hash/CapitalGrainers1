@@ -1,10 +1,12 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { createMetadata } from "@/lib/metadata";
-import { PageHero } from "@/components/ui/PageHero";
-import { Button } from "@/components/ui/Button";
-import { caseStudies, getCaseStudyBySlug } from "@/data/case-studies";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { RichPageLayout } from "@/components/pages/RichPageLayout";
+import { caseStudies, getCaseStudyBySlug } from "@/data/case-studies";
+import {
+  buildCaseStudySections,
+  getCaseStudyPageAssets,
+} from "@/lib/rich-page-content";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -28,6 +30,13 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   const study = getCaseStudyBySlug(slug);
   if (!study) notFound();
 
+  const { hero, gallery } = getCaseStudyPageAssets(study);
+  const metricSidebar =
+    study.metrics?.map((m) => ({ label: m.label, value: m.value })) ?? [
+      { label: "Industry", value: study.industry },
+      { label: "Result", value: study.result },
+    ];
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -37,43 +46,28 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           { name: study.brand, href: `/case-studies/${slug}` },
         ]}
       />
-      <PageHero label="Case Study" title={study.brand} subtitle={study.result} />
-      <section className="section-padding bg-white">
-        <div className="container-tcg grid gap-12 lg:grid-cols-2">
-          <div className="relative aspect-[16/10] border border-sand">
-            <Image src={study.imageSrc} alt={study.brand} fill className="object-cover" sizes="50vw" />
-          </div>
-          <div className="space-y-6">
-            <div>
-              <h2 className="font-bold text-teal">Challenge</h2>
-              <p className="mt-2 text-teal/75">{study.challenge}</p>
-            </div>
-            <div>
-              <h2 className="font-bold text-teal">Strategy</h2>
-              <p className="mt-2 text-teal/75">{study.strategy}</p>
-            </div>
-            <div>
-              <h2 className="font-bold text-teal">Execution</h2>
-              <p className="mt-2 text-teal/75">{study.execution}</p>
-            </div>
-            <div>
-              <h2 className="font-bold text-teal">Services</h2>
-              <p className="mt-2 text-teal/75">{study.services.join(" · ")}</p>
-            </div>
-            {study.metrics && (
-              <div className="grid grid-cols-2 gap-4 border-t border-sand pt-6">
-                {study.metrics.map((m) => (
-                  <div key={m.label}>
-                    <p className="text-2xl font-bold text-copper">{m.value}</p>
-                    <p className="text-xs uppercase tracking-wider text-teal/60">{m.label}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-            <Button href="/contact">Discuss a similar project</Button>
-          </div>
-        </div>
-      </section>
+      <RichPageLayout
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Case Studies", href: "/case-studies" },
+          { name: study.brand, href: `/case-studies/${slug}` },
+        ]}
+        label="Case study"
+        title={study.brand}
+        subtitle={study.result}
+        heroImage={hero.src}
+        heroImageAlt={hero.alt}
+        gallery={gallery}
+        sections={buildCaseStudySections(study)}
+        sidebarTitle="Results"
+        sidebarItems={metricSidebar}
+        relatedLinks={[
+          { label: "More case studies", href: "/case-studies" },
+          { label: "Full portfolio", href: "/portfolio" },
+        ]}
+        ctaTitle="Want results like this?"
+        ctaButton={{ label: "Start a project", href: "/contact" }}
+      />
     </>
   );
 }

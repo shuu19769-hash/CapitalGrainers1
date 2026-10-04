@@ -12,6 +12,7 @@ export function createMetadata({
 }): Metadata {
   const desc = description ?? siteConfig.description;
   const url = `${siteConfig.url}${path}`;
+  const ogImage = `${siteConfig.url}/images/logo.png`;
 
   return {
     title,
@@ -24,11 +25,13 @@ export function createMetadata({
       siteName: siteConfig.name,
       type: "website",
       locale: "en_US",
+      images: [{ url: ogImage, alt: siteConfig.name }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | ${siteConfig.name}`,
       description: desc,
+      images: [ogImage],
     },
   };
 }

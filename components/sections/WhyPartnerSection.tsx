@@ -22,7 +22,7 @@ export function WhyPartnerSection() {
           </p>
         </div>
         <Link
-          href="/contact"
+          href="/growth-audit"
           className="mt-10 inline-flex min-h-12 items-center justify-center rounded-full bg-cta px-10 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-cta-hover sm:text-base md:text-lg"
         >
           Get your free growth audit

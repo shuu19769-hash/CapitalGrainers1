@@ -60,6 +60,34 @@
   }
 }
 
+.nav-mega-trigger {
+  position: relative;
+}
+
+.nav-mega-trigger::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.25rem;
+  height: 2px;
+  background: var(--color-copper-soft);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.nav-mega-trigger--open::after,
+.nav-mega-trigger:hover::after {
+  transform: scaleX(1);
+}
+
+.header--overlay .nav-mega-trigger::after {
+  background: rgba(255, 255, 255, 0.9);
+}
+
 @layer utilities {
   .section-padding {
     padding-block: clamp(3rem, 8vw, 7rem);
@@ -135,9 +163,11 @@
     overflow: hidden;
     min-height: min(88vh, 46rem);
     background: radial-gradient(
-      closest-side at 50% 50%,
-      #2973a3 0%,
-      #152f3d 100%
+      closest-side at 50% 52%,
+      #b87345 0%,
+      #8a563c 28%,
+      #3d2a22 58%,
+      #1f1814 100%
     );
   }
 
@@ -149,7 +179,8 @@
     height: 100%;
     object-fit: cover;
     object-position: center center;
-    filter: hue-rotate(-35deg);
+    /* Shift particle wave from blue to brand copper (#a66d4f / #b87345) */
+    filter: hue-rotate(158deg) saturate(1.35) brightness(0.95) contrast(1.05);
   }
 
   .hero-ignite__video--poster {
@@ -184,6 +215,10 @@
 
 .animate-marquee {
   animation: marquee 45s linear infinite;
+}
+
+.marquee-paused {
+  animation-play-state: paused !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

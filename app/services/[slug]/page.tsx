@@ -1,10 +1,9 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createMetadata } from "@/lib/metadata";
-import { PageHero } from "@/components/ui/PageHero";
-import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { RichPageLayout } from "@/components/pages/RichPageLayout";
 import { getServiceBySlug, services } from "@/data/services";
+import { buildServiceSections, getServicePageAssets } from "@/lib/rich-page-content";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -28,6 +27,8 @@ export default async function ServiceDetailPage({ params }: Props) {
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
+  const { hero, gallery } = getServicePageAssets(service);
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -49,41 +50,29 @@ export default async function ServiceDetailPage({ params }: Props) {
           { name: service.title, href: `/services/${slug}` },
         ]}
       />
-      <PageHero label="Service" title={service.title} subtitle={service.shortDescription} />
-      <section className="section-padding bg-white">
-        <div className="container-tcg grid min-w-0 gap-8 sm:gap-12 lg:grid-cols-3">
-          <div className="min-w-0 space-y-8 lg:col-span-2">
-            <div>
-              <h2 className="text-xl font-bold text-teal">Overview</h2>
-              <p className="mt-4 leading-relaxed text-teal/75">{service.description}</p>
-            </div>
-            <div>
-              <h2 className="text-xl font-bold text-teal">The challenge we solve</h2>
-              <p className="mt-4 leading-relaxed text-teal/75">{service.challenge}</p>
-            </div>
-            <div>
-              <h2 className="text-xl font-bold text-teal">What&apos;s included</h2>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-teal/75">
-                {service.includes.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <aside className="border border-sand bg-sand-light p-8 h-fit">
-            <p className="text-xs uppercase tracking-widest text-copper">Best for</p>
-            <p className="mt-2 text-teal/80">{service.bestFor}</p>
-            <p className="mt-6 text-xs uppercase tracking-widest text-copper">Expected outcome</p>
-            <p className="mt-2 font-semibold text-teal">{service.outcome}</p>
-            <div className="mt-8">
-              <Button href="/contact">Get a Free Growth Audit</Button>
-            </div>
-            <Link href="/services" className="mt-4 block text-sm text-copper hover:underline">
-              ← All services
-            </Link>
-          </aside>
-        </div>
-      </section>
+      <RichPageLayout
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+          { name: service.title, href: `/services/${slug}` },
+        ]}
+        label="Service"
+        title={service.title}
+        subtitle={service.shortDescription}
+        heroImage={hero.src}
+        heroImageAlt={hero.alt}
+        gallery={gallery}
+        sections={buildServiceSections(service)}
+        sidebarItems={[
+          { label: "Best for", value: service.bestFor },
+          { label: "Expected outcome", value: service.outcome },
+          { label: "Category", value: service.category.replace("-", " ") },
+        ]}
+        relatedLinks={[
+          { label: "All services", href: "/services" },
+          { label: "View case studies", href: "/case-studies" },
+        ]}
+      />
     </>
   );
 }

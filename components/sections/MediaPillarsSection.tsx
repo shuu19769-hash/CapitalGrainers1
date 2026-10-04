@@ -9,8 +9,8 @@ const pillars = [
   {
     id: "earned",
     title: "Earned media",
-    image: "/images/portfolio/zazaar.jpg",
-    imageAlt: "Organic growth performance",
+    image: "/images/pages/web-analytics-dashboard.png",
+    imageAlt: "Organic growth, SEO, and website analytics",
     align: "left" as const,
     items: [
       "Search Engine Optimization (SEO)",
@@ -26,8 +26,8 @@ const pillars = [
   {
     id: "paid",
     title: "Paid media",
-    image: "/images/portfolio/austin-style.jpg",
-    imageAlt: "Paid media performance",
+    image: "/images/pages/paid-media-analytics.png",
+    imageAlt: "Google and Meta paid media analytics",
     align: "right" as const,
     items: [
       "Pay-Per-Click Advertising (PPC)",
@@ -43,8 +43,8 @@ const pillars = [
   {
     id: "owned",
     title: "Owned media",
-    image: "/images/portfolio/rehan-malik.jpg",
-    imageAlt: "Owned digital experiences",
+    image: "/images/pages/custom-admin-dashboard.png",
+    imageAlt: "Custom websites, dashboards, and owned digital experiences",
     align: "left" as const,
     items: [
       "Shopify & Ecommerce Development",

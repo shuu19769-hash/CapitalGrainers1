@@ -15,7 +15,7 @@ export function FinalCTA() {
           move your business forward.
         </p>
         <div className="mt-8 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mt-10 sm:max-w-none sm:flex-row sm:items-center sm:gap-4">
-          <Button href="/contact" className="sm:max-w-none">Request Your Free Growth Audit</Button>
+          <Button href="/growth-audit" className="sm:max-w-none">Request Your Free Growth Audit</Button>
           <Button href="/case-studies" variant="secondary" className="!border-cream !text-cream hover:!border-copper hover:!text-copper sm:max-w-none">
             View Case Studies
           </Button>

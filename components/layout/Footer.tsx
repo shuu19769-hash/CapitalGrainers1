@@ -67,7 +67,7 @@ export function Footer() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                href="/contact"
+                href="/growth-audit"
                 className="inline-flex items-center justify-center bg-copper px-5 py-2.5 text-sm font-bold text-teal transition-colors hover:bg-copper-soft"
               >
                 Get a Free Growth Audit

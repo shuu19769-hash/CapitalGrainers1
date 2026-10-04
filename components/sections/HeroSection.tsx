@@ -26,7 +26,10 @@ export function HeroSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="hero-ignite relative w-full max-w-full overflow-hidden" aria-label="Introduction">
+    <section
+      className="hero-ignite relative -mt-[4.25rem] w-full max-w-full overflow-hidden md:-mt-[5.25rem]"
+      aria-label="Introduction"
+    >
       <div className="hero-ignite__outer relative">
         <HeroWaveBackground />
 
@@ -44,7 +47,7 @@ export function HeroSection() {
               >
                 Turning Digital Investment Into
                 <br />
-                <span className="mt-1 inline-block italic text-copper-soft md:mt-2">Measurable Growth</span>
+                <span className="mt-1 inline-block italic text-white md:mt-2">Measurable Growth</span>
               </motion.h1>
 
               <motion.p
@@ -56,7 +59,7 @@ export function HeroSection() {
 
               <motion.div variants={reduce ? undefined : fadeUp} className="mt-8 sm:mt-10">
                 <Button
-                  href="/contact"
+                  href="/growth-audit"
                   className="hero-ignite__cta !w-auto !rounded-full !px-10 !py-4 !text-lg !font-semibold sm:!px-14 sm:!text-xl"
                   showArrow={false}
                 >

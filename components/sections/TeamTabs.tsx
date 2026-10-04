@@ -67,7 +67,7 @@ export function TeamTabs({ showAboutLink = false }: TeamTabsProps) {
   return (
     <div className="min-w-0 max-w-full">
       <div
-        className="mb-8 flex max-w-full gap-2 overflow-x-auto overscroll-x-contain pb-2 [-webkit-overflow-scrolling:touch] sm:flex-wrap sm:justify-center sm:overflow-visible sm:pb-0 md:gap-3"
+        className="mb-8 flex max-w-full flex-nowrap justify-center gap-1.5 overflow-x-auto overscroll-x-contain pb-2 [-webkit-overflow-scrolling:touch] sm:gap-2 md:gap-2.5 lg:gap-2 xl:gap-3"
         role="tablist"
         aria-label="Team members"
       >
@@ -83,7 +83,7 @@ export function TeamTabs({ showAboutLink = false }: TeamTabsProps) {
               aria-controls="team-panel"
               onClick={() => setActive(index)}
               className={cn(
-                "shrink-0 rounded-full px-4 py-2.5 text-left text-sm font-semibold transition-all duration-200 sm:px-5 sm:py-3 sm:text-[0.9375rem]",
+                "shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-left text-xs font-semibold transition-all duration-200 sm:px-3.5 sm:py-2.5 sm:text-sm md:px-4 md:py-2.5 lg:px-3 lg:text-[0.8125rem] xl:px-4 xl:text-sm",
                 selected
                   ? "bg-cta text-white shadow-md"
                   : "bg-sand text-ink/85 hover:bg-sand/90 hover:text-ink"
@@ -126,6 +126,13 @@ export function TeamTabs({ showAboutLink = false }: TeamTabsProps) {
               </ul>
 
               <p className="mt-6 text-base leading-relaxed text-ink/70 sm:text-[1.0625rem]">{member.bio}</p>
+
+              <Link
+                href={`/about/team/${member.slug}`}
+                className="mt-8 inline-flex min-h-11 items-center text-sm font-bold uppercase tracking-wide text-copper hover:underline"
+              >
+                View full profile →
+              </Link>
             </div>
           </div>
         </motion.article>

@@ -31,7 +31,9 @@ export default function RootLayout({
       <body className="flex min-h-screen w-full max-w-full flex-col overflow-x-hidden">
         <OrganizationJsonLd />
         <Header />
-        <main className="flex-1 min-w-0 w-full max-w-full overflow-x-hidden">{children}</main>
+        <main className="site-main flex-1 min-w-0 w-full max-w-full overflow-x-hidden pt-[4.25rem] md:pt-[5.25rem]">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
